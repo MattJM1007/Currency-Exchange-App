@@ -8,7 +8,13 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const apiKey = '';
+const apiKey = process.env.API_KEY;
+
+if(!apiKey){
+    console.error("Error: API_KEY is missing!")
+    process.exit(1);
+}
+
 const API_URL = `https://v6.exchangerate-api.com/v6/${apiKey}`;
 let codes;
 
