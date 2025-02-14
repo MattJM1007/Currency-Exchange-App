@@ -8,7 +8,7 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const apiKey = '96d2d5594ee8de35f175da1d';
+const apiKey = '';
 const API_URL = `https://v6.exchangerate-api.com/v6/${apiKey}`;
 let codes;
 
